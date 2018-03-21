@@ -6,11 +6,6 @@ while(my $line = <USERS>){
 	push @arr, $line;
 }
 
-@arr = sort {$a->[2] <=> $b->[2]} @arr;
-@arr = reverse @arr;
-
 foreach $item (@arr){
-	my @fields = split(":", $item);	
-	print $fields[0];
-	print "\n";
+	print $item; 
 }
