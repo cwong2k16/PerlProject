@@ -1,11 +1,26 @@
 open USERS, "<passwd.txt" or die "Can't open input file: $!";
 
-@arr = ();
+@numbers = ();
 
-while(my $line = <USERS>){
-	push @arr, $line;
+while(my $item = <USERS>){
+	my @fields = split(":", $item);	
+	push @numbers, $fields[3];
 }
 
-foreach $item (@arr){
-	print $item; 
+@numbers = sort @numbers;
+
+$curr = $numbers[0];
+$currCount = 1;
+
+shift @numbers;
+
+foreach $i (@numbers){
+	if ($i == $curr){
+		$currCount = $currCount + 1;
+	}
+	else{
+		print "group $curr has $currCount users\n";
+		$currCount = 1;
+		$curr = $i;
+	}
 }
