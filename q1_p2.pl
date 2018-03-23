@@ -11,6 +11,6 @@ while(my $line = <USERS>){
 
 foreach $item (@arr){
 	my @fields = split(":", $item);	
-	print $fields[0];
+	print "$fields[0], $fields[2]";
 	print "\n";
 }
