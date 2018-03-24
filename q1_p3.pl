@@ -9,20 +9,14 @@ while(my $item = <USERS>){
 
 @numbers = sort @numbers;
 
-$curr = $numbers[0];
-$currCount = 1;
-
-shift @numbers;
+%hashf = {};
 
 foreach $i (@numbers){
-	if ($i == $curr){
-		$currCount = $currCount + 1;
-	}
-	else{
-		print "group $curr has $currCount users\n";
-		$currCount = 1;
-		$curr = $i;
-	}
+	$hashf{$i} = $hashf{$i} + 1;
+}
+
+while(my($k, $v) = each %hashf) {
+	print "group $k has $v users\n";
 }
 
 close USERS;
