@@ -38,6 +38,12 @@ if(-e $file_name){
 		print "Enter 'c' to backup the first 10 lines, 'o' to overwrite without creating a backup\n";
 		$userOption = <>;
 		chomp $userOption;
+		while($userOption ne "o" and $userOption ne "c"){
+			print "Invalid! Your only options are c for copy, and o for overwrite\n";
+			print "Please select again:\n";
+			$userOption = <>;
+			chomp $userOption;
+		}
 		if($userOption eq "o"){
 			seek(LINES, 0, 0);
 			truncate LINES, 0;
