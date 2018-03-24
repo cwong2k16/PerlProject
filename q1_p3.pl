@@ -9,14 +9,14 @@ while(my $item = <USERS>){
 
 @numbers = sort @numbers;
 
-%hashf = {};
+%hashf = ();
 
 foreach $i (@numbers){
 	$hashf{$i} = $hashf{$i} + 1;
 }
 
 while(my($k, $v) = each %hashf) {
-	print "group $k has $v users\n" if $v;
+	print "group $k has $v users\n";
 }
 
 close USERS;
