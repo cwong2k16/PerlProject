@@ -8,6 +8,9 @@ sub sort_file{
 	}
 	
 	print @arr;
+	
+	@buffer = ();
+	
 		
 	close LINES;
 }
