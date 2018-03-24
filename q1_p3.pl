@@ -24,3 +24,5 @@ foreach $i (@numbers){
 		$curr = $i;
 	}
 }
+
+close USERS;

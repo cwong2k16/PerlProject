@@ -14,3 +14,5 @@ foreach $item (@arr){
 	print "$fields[0], $fields[2]";
 	print "\n";
 }
+
+close USERS;
