@@ -32,5 +32,5 @@ print "lines: $line_count, words: $word_count, characters: $char_count\n";
 foreach $item (@words){
 	push @reverse_words, split("", $item);
 }
-
+print "reversed: ";
 print reverse @reverse_words;
