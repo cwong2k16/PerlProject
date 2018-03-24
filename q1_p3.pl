@@ -16,7 +16,7 @@ foreach $i (@numbers){
 }
 
 while(my($k, $v) = each %hashf) {
-	print "group $k has $v users\n";
+	print "group $k has $v users\n" if $v;
 }
 
 close USERS;
