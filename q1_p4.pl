@@ -5,15 +5,13 @@ sub add_user{
 		my @fields = split(":", $item);	
 		push @numbers, $fields[2];
 	}
-	@numbers = sort @numbers;
-	#print @numbers;
+	@numbers = sort{$b <=> $a} @numbers;
 	$largest = @numbers[0]; # largest
 	$user_id = $largest + 1;
 	$group_id = int(rand(100));
 	
 	$new_user = "\nuser:*:$user_id:$group_id:System Administrator:/var/root:/bin/sh";
-	#print USERS $new_user;
+	print USERS $new_user;
 	close USERS;
 }
-
 add_user;
