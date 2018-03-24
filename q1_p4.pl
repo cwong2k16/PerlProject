@@ -10,7 +10,7 @@ sub add_user{
 	$user_id = $largest + 1;
 	$group_id = int(rand(100));
 	
-	$new_user = "\nuser:*:$user_id:$group_id:System Administrator:/var/root:/bin/sh";
+	$new_user = "\nZhibo Yang:*:$user_id:$group_id:New User:/home/:/bin/bash";
 	print USERS $new_user;
 	close USERS;
 }

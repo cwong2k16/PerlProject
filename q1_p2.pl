@@ -2,6 +2,9 @@ open USERS, "<passwd.txt" or die "Can't open input file: $!";
 
 @arr = ();
 
+@keys = ();
+@values = ();
+
 while(my $line = <USERS>){
 	push @arr, $line;
 }
@@ -11,8 +14,18 @@ while(my $line = <USERS>){
 
 foreach $item (@arr){
 	my @fields = split(":", $item);	
-	print "$fields[0], $fields[2]";
-	print "\n";
+	push @keys, $fields[0];
+	push @values, $fields[2];
+}
+
+print "sorted uids:";
+foreach $item (@values){
+	print " $item";
+}
+
+print "\nusernames:";
+foreach $item (@keys){
+	print " $item";
 }
 
 close USERS;

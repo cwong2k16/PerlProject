@@ -5,6 +5,8 @@ sub sort_file{
 
 	while($line = <LINES>){
 		$count = 0;
+		$line =~ s/^\s+//;
+		$line =~ s/\s+$//;
 		foreach $i (split('', $line)) { 
 			$count++;
 		}
@@ -13,12 +15,11 @@ sub sort_file{
 	}
 
 	@keys = sort {$hashf{$a} <=> $hashf{$b}} keys(%hashf);
-	my @vals = @hashf{@keys};
+	@vals = @hashf{@keys};
 	
 	foreach $item (@keys){
 		print "$item\n";
 	}
-	
 	close LINES;
 }
 
