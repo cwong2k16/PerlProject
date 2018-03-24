@@ -4,12 +4,38 @@ sub sort_file{
 	@arr = ();
 	
 	while($line = <LINES>){
-		push @arr, split("", $line);
+		push @arr, split(" ", $line);
 	}
 	
-	print @arr;
+	$index = 0;
+	$curr_length = 0;
+	$concat = "";
 	
-	@buffer = ();
+	foreach $item (@arr){
+		if($index == 0){
+			$index = 1;
+			$curr_length = length($item) + 1;
+			$concat = $item . " ";
+		}
+		else{
+			if(($curr_length + length($item)) > $width){
+				chop $concat;
+				print $concat;
+				print "\n";
+				$concat = $item . " ";
+				$curr_length = length($item) + 1;
+			}
+			else{
+				$curr_length = $curr_length + length($item) + 1;
+				$concat = $concat . $item . " ";
+			}	
+		}
+	}
+	
+	if($concat){
+		chop $concat;
+		print $concat;
+	}
 	
 		
 	close LINES;
