@@ -1,11 +1,36 @@
 [-+]?\d+(\. \d*)?F\b matches with:
-
 +5. 5F
 -667. F
 99. F
 
 [-+]?\d+(\. \d*)?F\b DOES NOT match with:
-
 95 F
 +66 E
 +925.F
+
+
+
+s/(#?)1|one/[\1January]/ig matches with:
+#1
+1
+one
+
+s/(#?)1|one/[\1January]/ig DOES NOT match with:
+#
+2
+two
+
+
+
+((.*?)\d)\s\2 matches with:
+f8 f
+adf0 adf
+zzz0 zzz
+
+((.*?)\d)\s\2 DOES NOT match with:
+x0y
+abc 6cba
+abc6abcd
+
+
+
