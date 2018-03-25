@@ -1,0 +1,11 @@
+[-+]?\d+(\. \d*)?F\b matches with:
+
++5. 5F
+-667. F
+99. F
+
+[-+]?\d+(\. \d*)?F\b DOES NOT match with:
+
+95 F
++66 E
++925.F

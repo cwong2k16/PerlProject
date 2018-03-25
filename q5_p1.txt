@@ -1,0 +1,2 @@
+/(very )+((agile )?(fluffy )?)(big )?(cat)/
+/[a-zA-Z]*([!, ., ?])/
